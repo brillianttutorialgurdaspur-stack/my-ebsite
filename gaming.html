@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MahajanTanishGames</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* cozy dark blue */
+      --card:#0b1220;
+      --accent:#ff6b6b; /* warm coral */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#071027 120%);color:#e6eef8;min-height:100vh}
+    header{display:flex;align-items:center;gap:18px;padding:22px 40px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .ico{width:56px;height:56px;background:linear-gradient(135deg,#6ee7b7,#60a5fa);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Press Start 2P',monospace;color:#041124}
+    h1{font-family:'Press Start 2P',monospace;font-size:18px;margin:0}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none}
+
+    /* hero */
+    .hero{padding:28px 40px;display:grid;grid-template-columns:1fr 360px;gap:28px}
+    .hero .intro{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:24px;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .hero h2{margin:0 0 8px 0;font-size:28px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);cursor:pointer}
+    .store-windows{background:var(--card);padding:14px;border-radius:12px}
+
+    /* layout */
+    main{padding:24px 40px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .thumb{height:130px;border-radius:8px;overflow:hidden;background:#071226;display:flex;align-items:center;justify-content:center}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .meta{padding:10px 4px}
+    .title{font-weight:600;font-size:14px;margin:0}
+    .price{margin-top:8px;font-weight:700}
+    .buy{display:inline-block;margin-top:10px;padding:8px 10px;border-radius:8px;text-decoration:none;background:linear-gradient(90deg,var(--accent),#ff9f1c);color:#041124;font-weight:700}
+
+    /* categories */
+    .categories{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .category{background:rgba(255,255,255,0.03);padding:10px 14px;border-radius:10px}
+
+    /* footer */
+    footer{padding:28px 40px;color:var(--muted);font-size:13px}
+
+    /* featured row */
+    .featured{display:flex;gap:12px;overflow:auto;padding:12px 0}
+    .feature-card{min-width:220px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:10px}
+
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr}header{padding:18px}main,header,.hero{padding-left:18px;padding-right:18px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="ico">MT</div>
+      <div>
+        <h1>MahajanTanishGames</h1>
+        <div style="font-size:12px;color:var(--muted)">Cozy gaming shop • Windows & Android • Curated collection</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#categories">Categories</a>
+      <a href="#paid">Paid Games</a>
+      <a href="#free">Free Games</a>
+      <a href="#apps">Apps</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="intro">
+      <h2>Welcome to MahajanTanishGames</h2>
+      <p style="color:var(--muted);margin-top:8px">A warm, cozy place to discover and buy PC & Android games. Click any game to open its store page and purchase or download.</p>
+      <div class="filters" style="margin-top:16px">
+        <div class="chip">Action</div>
+        <div class="chip">RPG</div>
+        <div class="chip">Strategy</div>
+        <div class="chip">Casual</div>
+        <div class="chip">Indie</div>
+        <div class="chip">Free</div>
+      </div>
+
+      <h3 style="margin-top:18px">Featured</h3>
+      <div class="featured" id="featured"></div>
+    </div>
+
+    <aside>
+      <div class="store-windows">
+        <h4 style="margin:0 0 8px 0">Windows & Android Apps</h4>
+        <div style="font-size:13px;color:var(--muted)">Quick access to useful apps</div>
+        <ul style="margin-top:12px;padding-left:18px;color:var(--muted)">
+          <li>Discord (Windows) - Communication for gamers</li>
+          <li>Steam (Windows) - Game library & purchases</li>
+          <li>Google Play Store (Android) - Get Android games</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <main>
+    <section id="categories">
+      <h3>Categories</h3>
+      <div class="categories">
+        <div class="category">Top Sellers</div>
+        <div class="category">New Releases</div>
+        <div class="category">Indie Gems</div>
+        <div class="category">Free to Play</div>
+        <div class="category">RPG</div>
+        <div class="category">Action</div>
+      </div>
+    </section>
+
+    <section id="paid">
+      <h3>Paid Games (curated)</h3>
+      <div class="grid" id="paidGrid"></div>
+    </section>
+
+    <section id="free" style="margin-top:28px">
+      <h3>Free Games</h3>
+      <div class="grid" id="freeGrid"></div>
+    </section>
+
+    <section id="apps" style="margin-top:28px">
+      <h3>Windows & Android Apps</h3>
+      <div class="grid" id="appsGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    Built with ❤️ — MahajanTanishGames • This demo includes direct store links for each title.
+  </footer>
+
+  <script>
+    /*
+      NOTE: This file is generated with real-store links embedded in the JS below.
+      The featured array will be used to render home screen items. Replace or expand arrays to add more games.
+    */
+
+    const featured = [
+      {title:'Elden Ring', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg', link:'https://store.steampowered.com/app/1245620/ELDEN_RING/', price:'See store'},
+      {title:'Minecraft', img:'https://resources.minecraft.net/wp-content/uploads/2020/08/Minecraft_thumb_1200-1.jpg', link:'https://www.minecraft.net/en-us', price:'Buy from official site'},
+      {title:'Cyberpunk 2077', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg', link:'https://store.steampowered.com/app/1091500/Cyberpunk_2077/', price:'See store'},
+    ];
+
+    const paidGames = [
+      {title:'Elden Ring', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg', link:'https://store.steampowered.com/app/1245620/ELDEN_RING/', price:'Check store'},
+      {title:'Cyberpunk 2077', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg', link:'https://store.steampowered.com/app/1091500/Cyberpunk_2077/', price:'Check store'},
+      {title:'Grand Theft Auto V', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg', link:'https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/', price:'Check store'},
+      {title:'The Witcher 3', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg', link:'https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/', price:'Check store'},
+      {title:'Red Dead Redemption 2', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg', link:'https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/', price:'Check store'},
+      {title:'Baldur\'s Gate 3', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg', link:'https://store.steampowered.com/app/1086940/Baldurs_Gate_3/', price:'Check store'},
+      {title:'Minecraft', img:'https://resources.minecraft.net/wp-content/uploads/2020/08/Minecraft_thumb_1200-1.jpg', link:'https://www.minecraft.net/en-us', price:'Check store'},
+      {title:'FIFA 23', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1692740/header.jpg', link:'https://store.steampowered.com/app/1692740/EA_SPORTS_FC_24/', price:'Check store'},
+      {title:'Assassin\'s Creed Valhalla', img:'https://ubistatic19-a.akamaihd.net/ubicomstatic/en-US/global/search/valhalla_hero_1280x720.jpg', link:'https://store.steampowered.com/app/1222730/Assassins_Creed_Valhalla/', price:'Check store'},
+      {title:'Hades', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg', link:'https://store.steampowered.com/app/1145360/Hades/', price:'Check store'},
+      {title:'Stardew Valley', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg', link:'https://store.steampowered.com/app/413150/Stardew_Valley/', price:'Check store'},
+      {title:'Death Stranding Director\'s Cut', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/header.jpg', link:'https://store.steampowered.com/app/1190460/Death_Stranding_Directors_Cut/', price:'Check store'},
+      {title:'Resident Evil 4', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg', link:'https://store.steampowered.com/app/2050650/Resident_Evil_4/', price:'Check store'},
+      {title:'DOOM Eternal', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/782330/header.jpg', link:'https://store.steampowered.com/app/782330/DOOM_Eternal/', price:'Check store'},
+      {title:'Metro Exodus', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/412020/header.jpg', link:'https://store.steampowered.com/app/412020/Metro_Exodus/', price:'Check store'},
+      {title:'Ori and the Will of the Wisps', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1057090/header.jpg', link:'https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/', price:'Check store'},
+      {title:'Control Ultimate Edition', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/870780/header.jpg', link:'https://store.steampowered.com/app/870780/Control_Ultimate_Edition/', price:'Check store'},
+      {title:'Divinity: Original Sin 2', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/435150/header.jpg', link:'https://store.steampowered.com/app/435150/Divinity_Original_Sin_2/', price:'Check store'},
+      {title:'Dark Souls III', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/374320/header.jpg', link:'https://store.steampowered.com/app/374320/DARK_SOULS_III/', price:'Check store'},
+      {title:'Sekiro: Shadows Die Twice', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg', link:'https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice/', price:'Check store'},
+      {title:'Cyberpunk 2077 Phantom Liberty', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/2138330/header.jpg', link:'https://store.steampowered.com/app/1091500/Cyberpunk_2077/', price:'Check store'},
+      {title:'The Outer Worlds', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/586320/header.jpg', link:'https://store.steampowered.com/app/586320/The_Outer_Worlds/', price:'Check store'},
+      {title:'Rocket League', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/252950/header.jpg', link:'https://store.steampowered.com/app/252950/Rocket_League/', price:'Check store'},
+      {title:'Monster Hunter: World', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg', link:'https://store.steampowered.com/app/582010/Monster_Hunter_World/', price:'Check store'},
+      {title:'Sid Meier\'s Civilization VI', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/289070/header.jpg', link:'https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/', price:'Check store'},
+      {title:'Ghost of Tsushima (PS not on steam)', img:'https://upload.wikimedia.org/wikipedia/en/1/1a/Ghost_of_Tsushima_Cover.jpg', link:'#', price:'Platform-specific'},
+      {title:'Forza Horizon 5', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg', link:'https://store.steampowered.com/app/1551360/Forza_Horizon_5/', price:'Check store'},
+      {title:'No Man\'s Sky', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/275850/header.jpg', link:'https://store.steampowered.com/app/275850/No_Mans_Sky/', price:'Check store'},
+      {title:'Subnautica', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/264710/header.jpg', link:'https://store.steampowered.com/app/264710/Subnautica/', price:'Check store'},
+      {title:'Persona 5 Royal', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/1452590/header.jpg', link:'https://store.steampowered.com/app/1452590/Persona_5_Royal/', price:'Check store'},
+      {title:'Among Us', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg', link:'https://store.steampowered.com/app/945360/Among_Us/', price:'Check store'},
+      {title:'The Elder Scrolls V: Skyrim Special Edition', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/489830/header.jpg', link:'https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/', price:'Check store'}
+    ];
+
+    const freeGames = [
+      {title:'Fortnite', img:'https://cdn2.unrealengine.com/egs-fortnite-epicgames-1920x1080-23d8b0b3b6.jpg', link:'https://www.epicgames.com/fortnite/en-US/home', price:'Free'},
+      {title:'Valorant', img:'https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt1a9a3a7b0e3f8c78/60b8e3b6b3a9cc6f2b3f03c5/valorant-hero.jpg', link:'https://playvalorant.com/', price:'Free'},
+      {title:'Genshin Impact', img:'https://uploadstatic-sea.mihoyo.com/contentweb/20201209/2020120911411646423.jpg', link:'https://genshin.hoyoverse.com/', price:'Free'},
+      {title:'PUBG Mobile', img:'https://i.ytimg.com/vi/4y0bXrQb7yU/maxresdefault.jpg', link:'https://www.pubgmobile.com/', price:'Free'},
+      {title:'Among Us (mobile)', img:'https://store-images.s-microsoft.com/image/apps.53445.9007199266249057.6b2a2f07-3dc6-4ed1-9f30-c2a2d9a391c0.b4c0f374-8a2b-4b2a-a6f0-cf4e6d3d4a8f', link:'https://www.innersloth.com/gameAmongUs.php', price:'Free on mobile'},
+      {title:'Asphalt 9', img:'https://cnet1.cbsistatic.com/img/6b5vF2X1v0n0hL3w8n0lO8U7sRs=/940x0/2019/02/26/9df3f3f2-3c3f-4d3a-8b4e-1fa1a3a9f6f9/asphalt-9-legends.jpg', link:'https://www.gameloft.com/en/games/asphalt-9', price:'Free'},
+      {title:'Candy Crush Saga', img:'https://play-lh.googleusercontent.com/4s6qj3gG9zv7dQHk2qvZPz0v3Xf5eGvCq9cWb7cYwQ', link:'https://king.com/game/candycrush', price:'Free'},
+      {title:'Subway Surfers', img:'https://play-lh.googleusercontent.com/1B2qj3gG9zv7dQHk2qvZPz0v3Xf5eGvCq9cWb7cYwQ', link:'https://sybo.com/games/subway-surfers', price:'Free'},
+      {title:'Call of Duty: Warzone (free)', img:'https://www.callofduty.com/content/dam/atvi/cod/homepage/warzone-2/warzone-2-0-1920.jpg', link:'https://www.callofduty.com/warzone', price:'Free'},
+      {title:'League of Legends', img:'https://cdn1.dotesports.com/wp-content/uploads/2020/11/10115611/league-of-legends.jpg', link:'https://www.leagueoflegends.com/', price:'Free'},
+      {title:'Roblox', img:'https://www.roblox.com/headless-thumbnail/image?userId=1&width=420&height=420', link:'https://www.roblox.com/', price:'Free'},
+      {title:'Dota 2', img:'https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg', link:'https://store.steampowered.com/app/570/Dota_2/', price:'Free'}
+    ];
+
+    const apps = [
+      {title:'Steam (Windows)', img:'https://store-images.s-microsoft.com/image/apps.32827.9007199266249057.2a2f07.png', link:'https://store.steampowered.com/', price:'Free'},
+      {title:'Discord (Windows)', img:'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/xxxxxx/discord.jpg', link:'https://discord.com/download', price:'Free'},
+      {title:'Google Play Store (Android)', img:'https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg', link:'https://play.google.com/store', price:'Free'}
+    ];
+
+    function makeCard(item){
+      const el = document.createElement('div'); el.className='card';
+      el.innerHTML = `
+        <div class="thumb"><img src="${item.img}" alt="${item.title}"></div>
+        <div class="meta">
+          <div class="title">${item.title}</div>
+          <div class="price">${item.price}</div>
+          <a class="buy" href="${item.link}" target="_blank" rel="noopener">Open Store</a>
+        </div>`;
+      return el;
+    }
+
+    // render featured
+    const featuredEl = document.getElementById('featured');
+    featured.forEach(f=> featuredEl.appendChild(makeCard(f)));
+
+    // render paid list
+    const paidGrid = document.getElementById('paidGrid');
+    paidGames.forEach(g=> paidGrid.appendChild(makeCard(g)));
+
+    // render free list
+    const freeGrid = document.getElementById('freeGrid');
+    freeGames.forEach(g=> freeGrid.appendChild(makeCard(g)));
+
+    // render apps
+    const appsGrid = document.getElementById('appsGrid');
+    apps.forEach(a=> appsGrid.appendChild(makeCard(a)));
+
+    // convenience: search highlight (simple)
+    document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>alert('Filter: '+ch.textContent)));
+  </script>
+</body>
+</html>
